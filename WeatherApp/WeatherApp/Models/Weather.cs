@@ -18,5 +18,7 @@ namespace WeatherApp.Models
 
     public class WeatherDBContext : DbContext {
         public DbSet<Weather> Weathers { get; set; }
+
+       
     }
 }
