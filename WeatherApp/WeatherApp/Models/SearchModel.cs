@@ -11,7 +11,7 @@ namespace WeatherApp.Models
         public int zipcode { get; set; }
         public string location { get; set; }
         public string forecast { get; set; }
-        public string temperature { get; set; }
+        public int temperature { get; set; }
        
     }
 }

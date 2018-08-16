@@ -20,6 +20,27 @@ namespace WeatherApp.Controllers
             return View(db.Weathers.ToList());
         }
 
+        public ActionResult Search(int zip) {
+            var result = new SearchModel();
+
+            using (var data = new WeatherDBContext()) {
+                var query = from wf in data.Weathers
+                            where wf.ZIPCODE == zip
+                            select wf;
+
+                foreach (var q in query)
+                {
+                    result.id = q.ID;
+                    result.zipcode = q.ZIPCODE;
+                    result.location = q.LOCATION;
+                    result.forecast = q.FORECAST;
+                    result.temperature = q.TEMPERATURE;
+                }
+            }
+
+                return View(result);
+        }
+
         // GET: Weathers/Details/5
         public ActionResult Details(int? id)
         {
