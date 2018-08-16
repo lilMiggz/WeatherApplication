@@ -4,8 +4,9 @@
     ViewBag.Title = "Search";
 }
 
-<h2>Weather Forecast for: @Html.DisplayFor(model => model.location)</h2>
-<h3>@Html.DisplayFor(model => model.zipcode)</h3>
+<p>
+    <h2>Weather Forecast for: @Html.DisplayFor(model => model.location) @Html.DisplayFor(model => model.zipcode)</h2>
+</p>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -27,4 +28,5 @@
 
     </dl>
 </div>
+ 
 

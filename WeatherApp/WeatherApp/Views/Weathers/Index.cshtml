@@ -4,20 +4,23 @@
     ViewBag.Title = "Index";
 }
 
-<script src="~/Scripts/jquery.validate.js"></script>
+
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 <h2 class="text-center">My Weather App</h2>
 
-<p>
+
     @using (Html.BeginForm())
     {
-    <p class="text-center">
-        Enter a 5 digit Zip-Code: <input type="number" id="zip" />
-        <input type="submit" id="click_btn" value="Search" class="btn btn-default" />
-    </p>
+    <div class="input-group">
+        <input type="number" class="form-control col-md-offset-5" placeholder="Enter a 5 digit Zip-Code" id="zip" />
+        <span class="input-group-btn col-md-pull-4">
+        <input type="submit" id="click_btn" value="Search" class="btn btn-primary" />
+        </span>
+    </div>
     <div id="update_div"></div>
     }
-</p>
+
+
 
 
 <script>
@@ -39,4 +42,6 @@
     });
 
 </script>
+
+
 
