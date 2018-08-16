@@ -13,11 +13,30 @@
     {
     <p>
         Title: <input type="number" id="zip" />
-        <input type="submit" id="click_btn" value="Enter" class="btn btn-default" />
+        <input type="submit" id="click_btn" value="Search" class="btn btn-default" />
     </p>
     <div id="update_div"></div>
     }
 </p>
 
 
+<script>
+    $(document).ready(function () {
+        $("#click_btn").click(function () {
+            zipNumber = $("#zip").val();
+            $.ajax({
+                type: "get",
+                url: "/Weathers/Search?" + "zip=" + zipNumber,
+                datatype: "html",
+                success: function (data) {
+                    $("#update_div").html(data);
+                }
+            });
+
+            return false;
+        });
+
+    });
+
+</script>
 

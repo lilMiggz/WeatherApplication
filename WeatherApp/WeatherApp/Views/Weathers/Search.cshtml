@@ -4,28 +4,12 @@
     ViewBag.Title = "Search";
 }
 
-<h2>Search</h2>
+<h2>Weather Forecast for: @Html.DisplayFor(model => model.location)</h2>
 
 <div>
-    <h4>SearchModel</h4>
+    <h3>@Html.DisplayFor(model => model.zipcode)</h3>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.zipcode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.zipcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.location)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.forecast)
         </dt>
@@ -39,12 +23,9 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.temperature)
+            @Html.DisplayFor(model => model.temperature) &#8457;
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
