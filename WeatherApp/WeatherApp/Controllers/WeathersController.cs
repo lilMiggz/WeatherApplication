@@ -28,15 +28,23 @@ namespace WeatherApp.Controllers
                             where wf.ZIPCODE == zip
                             select wf;
 
+                int count = 0;
+
                 foreach (var q in query)
                 {
+                    count++;
                     result.id = q.ID;
                     result.zipcode = q.ZIPCODE;
                     result.location = q.LOCATION;
                     result.forecast = q.FORECAST;
                     result.temperature = q.TEMPERATURE;
                 }
+
+                if (count == 0) {
+                    return new EmptyResult();
+                }
             }
+
 
                 return View(result);
         }
